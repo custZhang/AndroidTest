@@ -21,6 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".LocalReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcasttest.LocalReceiver"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".MyBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcasttest.MY_BROADCAST"/>
+            </intent-filter>
+            <meta-data android:name="android:priority" android:value="1000" />
+        </receiver>
+
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
